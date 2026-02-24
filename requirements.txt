@@ -1,0 +1,8 @@
+# Supplier ETL Local — minimal deps (Python 3.10+)
+# Standard library used: csv, json, sqlite3, hashlib, struct, uuid, os, sys, datetime
+# No external packages required for CSV + SQLite + mock embeddings.
+# Postgres (for init_postgres_db.py):
+psycopg2-binary>=2.9.0
+# Optional for Excel later:
+# openpyxl>=3.0.0
+# pandas>=2.0.0

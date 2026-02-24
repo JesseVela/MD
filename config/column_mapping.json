@@ -1,0 +1,23 @@
+{
+  "description": "Map client upload column names to our snake_case (05-Full-Table-Column-Reference). Tier 1 ETL pattern.",
+  "mappings": {
+    "Vendor Name": "supplier_name_normalized",
+    "VendorName": "supplier_name_normalized",
+    "Supplier Name": "supplier_name_normalized",
+    "Supplier ID": "supplier_id",
+    "Vendor ID": "supplier_id",
+    "PO Number": "po_number",
+    "PONumber": "po_number",
+    "Amount": "amount",
+    "Currency": "currency",
+    "Client ID": "client_id",
+    "Upload ID": "upload_id",
+    "L1 Category": "l1_category",
+    "L2 Category": "l2_category",
+    "L3 Category": "l3_category",
+    "Country Code": "country_code",
+    "Product Description": "product_description",
+    "Quantity": "quantity",
+    "quantity": "quantity"
+  }
+}

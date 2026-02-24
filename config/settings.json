@@ -1,0 +1,7 @@
+{
+  "use_mock_embeddings": true,
+  "embedding_dim": 1536,
+  "db_path": "db/supplier_etl.db",
+  "logs_path": "logs",
+  "vector_index_path": "vector/vector_index.db"
+}

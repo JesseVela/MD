@@ -1,0 +1,3 @@
+client_id,supplier_id,canonical_supplier_id,match_method,match_confidence,matched_on,created_at,updated_at
+acme,100782,SUP-00001,exact_name_key,1.0,name_key,,2026-02-05
+acme,100891,SUP-00003,exact_name_key,1.0,name_key,,2026-02-05

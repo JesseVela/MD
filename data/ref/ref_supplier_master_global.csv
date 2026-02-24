@@ -1,0 +1,4 @@
+canonical_supplier_id,normalized_supplier_name,name_key,l1_category,l2_category,l3_category,supplier_description,country_codes,last_enriched_at,last_updated_at
+SUP-00001,Staples Inc,staples inc,,,,,,,2026-02-05
+SUP-00002,International Business Machines,international business machines,,,,,,,2026-02-05
+SUP-00003,Amazon Business,amazon business,IT,Technology,Software,,,2026-02-05,2026-02-05
