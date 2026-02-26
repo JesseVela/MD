@@ -1,0 +1,5 @@
+client_id,po_number,supplier_id,amount,currency,quantity,supplier_name_normalized,l1_category,l2_category,l3_category
+acme,PO-2026-001,100782,15000.00,USD,40,Staples Inc,Office Supplies,Facilities,Office Supplies
+acme,PO-2026-002,100782,20000.00,USD,50,Staples Inc,Office Supplies,Facilities,Office Supplies
+acme,PO-2026-003,100782,10000.00,USD,30,Staples Inc,Office Supplies,Facilities,Office Supplies
+acme,PO-2026-004,100891,28000.00,USD,50,Amazon Business,IT,Technology,Software

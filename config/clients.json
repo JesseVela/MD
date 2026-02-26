@@ -1,0 +1,7 @@
+{
+  "description": "Registered clients (ref.clients). Aligned with Excel-Example-CSVs shared with Kristaq. client_id values: acme, beta.",
+  "clients": [
+    {"client_id": "acme", "client_name": "Acme Corp"},
+    {"client_id": "beta", "client_name": "Beta Inc"}
+  ]
+}

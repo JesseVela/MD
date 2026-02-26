@@ -1,0 +1,26 @@
+{"run_id": "a403d39e", "stage": "parse", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:03:16.245832Z"}
+{"run_id": "a403d39e", "stage": "validate", "status": "error", "row_count": null, "error_message": "Row 1: missing required columns: {'upload_id'}; Row 2: missing required columns: {'upload_id'}; Row 3: missing required columns: {'upload_id'}", "timestamp": "2026-02-05T14:03:16.246164Z"}
+{"run_id": "a403d39e", "stage": "normalize", "status": "ok", "row_count": 0, "error_message": null, "timestamp": "2026-02-05T14:03:16.246404Z"}
+{"run_id": "a403d39e", "stage": "structured_write", "status": "error", "row_count": null, "error_message": "disk I/O error", "timestamp": "2026-02-05T14:03:17.634502Z"}
+{"run_id": "6b40b9c6", "stage": "parse", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.305784Z"}
+{"run_id": "6b40b9c6", "stage": "validate", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.306045Z"}
+{"run_id": "6b40b9c6", "stage": "normalize", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.306372Z"}
+{"run_id": "6b40b9c6", "stage": "structured_write", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.329672Z"}
+{"run_id": "6b40b9c6", "stage": "chunk", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.331882Z"}
+{"run_id": "6b40b9c6", "stage": "embed", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.333741Z"}
+{"run_id": "6b40b9c6", "stage": "vector_write", "status": "ok", "row_count": 3, "error_message": null, "timestamp": "2026-02-05T14:04:01.343178Z"}
+{"run_id": "29acbcf1", "stage": "parse", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:51:25.850601Z"}
+{"run_id": "29acbcf1", "stage": "validate", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:51:25.850601Z"}
+{"run_id": "29acbcf1", "stage": "normalize", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:51:25.851941Z"}
+{"run_id": "29acbcf1", "stage": "structured_write", "status": "error", "row_count": null, "error_message": "table client_acme_transactions_t1 has no column named quantity", "timestamp": "2026-02-05T14:51:25.854387Z"}
+{"run_id": "5ab38d5e", "stage": "parse", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:34.502674Z"}
+{"run_id": "5ab38d5e", "stage": "validate", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:34.502674Z"}
+{"run_id": "5ab38d5e", "stage": "normalize", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:34.504182Z"}
+{"run_id": "5ab38d5e", "stage": "structured_write", "status": "error", "row_count": null, "error_message": "disk I/O error", "timestamp": "2026-02-05T14:52:35.910868Z"}
+{"run_id": "d2c0ab23", "stage": "parse", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.254288Z"}
+{"run_id": "d2c0ab23", "stage": "validate", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.254288Z"}
+{"run_id": "d2c0ab23", "stage": "normalize", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.255262Z"}
+{"run_id": "d2c0ab23", "stage": "structured_write", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.271199Z"}
+{"run_id": "d2c0ab23", "stage": "chunk", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.273673Z"}
+{"run_id": "d2c0ab23", "stage": "embed", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.276299Z"}
+{"run_id": "d2c0ab23", "stage": "vector_write", "status": "ok", "row_count": 4, "error_message": null, "timestamp": "2026-02-05T14:52:50.281400Z"}

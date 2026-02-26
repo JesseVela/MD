@@ -1,0 +1,4 @@
+client_id,po_number,supplier_id,amount,currency,supplier_name_normalized,l1_category,l2_category,l3_category
+client_acme,PO-2026-001,S100782,15000.00,USD,Staples Inc,Office Supplies,Facilities,Office Supplies
+client_acme,PO-2026-002,S100783,8200.50,USD,International Business Machines,IT Services,Software,Cloud
+client_acme,PO-2026-003,S100782,3200.00,USD,Staples Inc,Office Supplies,Facilities,Office Supplies
