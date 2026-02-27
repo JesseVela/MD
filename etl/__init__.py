@@ -1,1 +1,1 @@
-# ETL package (parse, validate, normalize, structured_write, extract_and_chunk)
+# ETL package (supplier_master_etl, supplier_normalize)

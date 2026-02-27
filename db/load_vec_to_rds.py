@@ -4,7 +4,7 @@ Load supplier embeddings from RDS ref tables into vec.vector_embeddings using AW
 Flow:
   1. Read ref.supplier_master JOIN ref.global_supplier_data_master from RDS.
   2. Build source_text per supplier (name + description + L1/L2/L3 + product_service_tags).
-  3. Call Amazon Bedrock Titan Embeddings (amazon.titan-embed-text-v1:0, 1536 dim) in parallel.
+  3. Call Amazon Bedrock Titan Embeddings G1 (amazon.titan-embed-text-v1, 1536 dim) in parallel.
   4. Write to vec.vector_embeddings (client_id, genpact_supplier_id, chunk_id, embedding BYTEA, source_text, indexed_at).
 
 Uses env: DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT, AWS_REGION (default us-east-1).
@@ -73,8 +73,8 @@ DB_NAME = os.environ.get("DB_NAME", "supplier_etl")
 DB_PORT = os.environ.get("DB_PORT", "5432")
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 
-# Bedrock Titan Embed Text v1: 1536 dimensions (aligns with diagram and vec table)
-BEDROCK_MODEL_ID = "amazon.titan-embed-text-v1:0"
+# Bedrock Titan Embeddings G1 - Text: 1536 dimensions (use ID without :0 per AWS docs)
+BEDROCK_MODEL_ID = "amazon.titan-embed-text-v1"
 EMBED_DIM = 1536
 
 # client_id for reference/global supplier embeddings (no client-specific slice)
@@ -217,7 +217,22 @@ def main():
     print(f"Embedding {total} suppliers with {args.workers} workers...")
 
     # Create Bedrock client (boto3 does not support verify=False; SSL skip is done via patch above)
-    bedrock = boto3.client("bedrock-runtime", region_name=AWS_REGION)
+    try:
+        bedrock = boto3.client("bedrock-runtime", region_name=AWS_REGION)
+    except Exception as e:
+        print(f"AWS/Bedrock client failed: {e}", file=sys.stderr)
+        print("Set AWS credentials (aws configure, or AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY, or AWS_PROFILE for SSO). See db/README-AWS-Credentials-for-Bedrock.md.", file=sys.stderr)
+        sys.exit(1)
+    # Fail fast: one test call so we don't run 1000+ Bedrock calls only to find credentials missing
+    try:
+        _embed_bedrock("test", bedrock)
+    except Exception as e:
+        err_msg = str(e).strip().lower()
+        if "credential" in err_msg or "unable to locate" in err_msg:
+            print("Bedrock call failed: no valid AWS credentials.", file=sys.stderr)
+            print("Configure credentials (aws configure, or env vars, or AWS_PROFILE for SSO). See db/README-AWS-Credentials-for-Bedrock.md.", file=sys.stderr)
+            sys.exit(1)
+        raise
     now = datetime.now(timezone.utc)
     inserted = 0
     errors = []

@@ -33,7 +33,7 @@ DB_NAME = os.environ.get("DB_NAME", "supplier_etl")
 DB_PORT = os.environ.get("DB_PORT", "5432")
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 
-BEDROCK_MODEL_ID = "amazon.titan-embed-text-v1:0"
+BEDROCK_MODEL_ID = "amazon.titan-embed-text-v1"
 EMBED_DIM = 1536
 GLOBAL_CLIENT_ID = "global"
 

@@ -242,6 +242,19 @@ def init_postgres_db() -> None:
                 PRIMARY KEY (client_id, genpact_supplier_id, chunk_id)
             )
         """)
+        # pgvector: enable extension (may require superuser; if it fails, run migrate_add_pgvector.sql manually)
+        try:
+            cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
+        except Exception:
+            pass
+        # Add embedding_vec for load_vec_to_rds.py (Bedrock Titan 1536 dim)
+        try:
+            cur.execute("""
+                ALTER TABLE vec.vector_embeddings
+                ADD COLUMN IF NOT EXISTS embedding_vec vector(1536)
+            """)
+        except Exception:
+            pass
 
         conn.commit()
         cur.close()
